@@ -18,6 +18,7 @@
                     <th scope="col">Slug</th>
                     <th scope="col">Image</th>
                     <th scope="col">Description</th>
+                    <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,6 +29,13 @@
                     <td scope="row">{{$project->slug}}</td>
                     <td scope="row">{{$project->image}}</td>
                     <td scope="row">{{$project->description}}</td>
+                    <td scope="row">
+                        <a href="{{route('admin.projects.show', $project->id)}}"><span>View</span></a>
+                        <a href="{{route('admin.projects.edit', $project->id)}}"><span>Edit</span></a>
+                        <a href=""><span>Delete</span></a>
+                        
+                        
+                    </td>
                 </tr>
                 @empty
                 <tr class="">
