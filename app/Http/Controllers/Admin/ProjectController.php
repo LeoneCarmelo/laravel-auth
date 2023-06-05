@@ -29,7 +29,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.projects.create');
     }
 
     /**
@@ -40,7 +40,17 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        //
+        //validation
+        $val_data = $request->validated();
+        //add slug + validation
+        $slug = Project::generateSlug($val_data['title']);
+        //dd($slug);
+        $val_data['slug'] = $slug;
+
+        //create new project
+        Project::create($val_data);
+        //redirect to index
+        return to_route('admin.projects.index')->with('message', 'Project created.');
     }
 
     /**

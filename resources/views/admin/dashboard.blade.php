@@ -70,7 +70,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('admin.projects.index')}}">
+                        <a class="nav-link {{Route::currentRouteName() === 'admin.projects.index' ? 'bg-dark text-white' : ''}}" href="{{route('admin.projects.index')}}">
                             <span data-feather="file"></span>
                             Projects
                         </a>

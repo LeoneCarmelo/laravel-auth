@@ -3,6 +3,12 @@
 @section('mainDash')
 <div class="container">
     <h1 class="text-center py-3">Projects</h1>
+    @if (session('message'))
+    <div class="alert alert-success" role="alert">
+        <strong>{{session('message')}}</strong>
+    </div>
+    @endif
+    <a class="btn btn-primary my-2 " href="{{route('admin.projects.create')}}" role="button">Add Project</a>
     <div class="table-responsive">
         <table class="table table-primary">
             <thead>
@@ -31,7 +37,7 @@
             </tbody>
         </table>
     </div>
-    
+
 </div>
 
 @endsection
