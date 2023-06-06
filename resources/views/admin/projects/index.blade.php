@@ -31,7 +31,7 @@
                     <td scope="row">{{$project->description}}</td>
                     <td scope="row">
                         <a href="{{route('admin.projects.show', $project->slug)}}"><span>View</span></a>
-                        <a href="{{route('admin.projects.edit', $project->id)}}"><span>Edit</span></a>
+                        <a href="{{route('admin.projects.edit', $project->slug)}}"><span>Edit</span></a>
                         <a href=""><span>Delete</span></a>
                         
                         
