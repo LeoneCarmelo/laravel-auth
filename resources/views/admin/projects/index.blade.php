@@ -33,7 +33,7 @@
                         <img src="{{$project->image}}" width="120" alt="">
                     </td>
                     <td scope="row">
-                        <div id="description">
+                        <div id="desc">
                             {{$project->description}}
                         </div>
                     </td>

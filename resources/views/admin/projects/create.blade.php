@@ -24,9 +24,9 @@
         @enderror
     </div>
     <div class="mb-3">
-        <label for="description" class="form-label">Description</label>
-        <input type="text" name="description" id="description" class="form-control @error('description') is-invalid @enderror" placeholder="Description" aria-describedby="helpIddescription">
-        <small id="helpIddescription" class="text-muted">Insert description.</small>
+      <label for="description" class="form-label">Description</label>
+      <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description" rows="3"></textarea>
+      <small id="helpIddescription" class="text-muted">Insert description.</small>
         @error('description')
         <div class="alert alert-danger" role="alert">
           <strong>Error: </strong> {{$message}}

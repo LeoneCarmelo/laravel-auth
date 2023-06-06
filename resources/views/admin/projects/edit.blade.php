@@ -7,7 +7,7 @@
     <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" placeholder="Title" aria-describedby="helpIdtitle" value="{{old('title', $project->title)}}">
-        <small id="helpIdtitle" class="text-muted">Insert a unique title (max 100 characters).</small>
+        <small id="helpIdtitle" class="text-muted">Edit a unique title (max 100 characters).</small>
         @error('title')
         <div class="alert alert-danger" role="alert">
             <strong>Error: </strong> {{$message}}
@@ -17,7 +17,7 @@
     <div class="mb-3">
         <label for="image" class="form-label">Image</label>
         <input type="text" name="image" id="image" class="form-control @error('image') is-invalid @enderror" placeholder="Image" aria-describedby="helpIdimage" value="{{old('image', $project->image)}}">
-        <small id="helpIdimage" class="text-muted">Insert a Image's link.</small>
+        <small id="helpIdimage" class="text-muted">Edit a Image's link.</small>
         @error('image')
         <div class="alert alert-danger" role="alert">
           <strong>Error: </strong> {{$message}}
@@ -25,10 +25,10 @@
         @enderror
     </div>
     <div class="mb-3">
-        <label for="description" class="form-label">Description</label>
-        <input type="text" name="description" id="description" class="form-control @error('description') is-invalid @enderror" placeholder="Description" aria-describedby="helpIddescription" value="{{old('description', $project->description)}}">
-        <small id="helpIddescription" class="text-muted">Insert description.</small>
-        @error('description')
+      <label for="description" class="form-label"></label>
+      <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description" rows="3">{{old('description', $project->description)}}</textarea>
+      <small id="helpIddescription" class="text-muted">Edit description.</small>
+      @error('description')
         <div class="alert alert-danger" role="alert">
           <strong>Error: </strong> {{$message}}
         </div>
