@@ -30,7 +30,7 @@
                     <td scope="row">{{$project->title}}</td>
                     <td scope="row">{{$project->slug}}</td>
                     <td scope="row">
-                        <img src="{{$project->image}}" width="120" alt="">
+                        <img src="{{$project->image}}" width="120" alt="{{$project->title}}">
                     </td>
                     <td scope="row">
                         <div id="desc">
@@ -42,9 +42,33 @@
                     <td scope="row">
                         <a href="{{route('admin.projects.show', $project->slug)}}"><span>View</span></a>
                         <a href="{{route('admin.projects.edit', $project->slug)}}"><span>Edit</span></a>
-                        <a href=""><span>Delete</span></a>
-
-
+                        <!-- Modal trigger button -->
+                        <button type="button" class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#modal-{{$project->slug}}">
+                            Delete
+                        </button>
+                        <!-- Modal Body -->
+                        <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+                        <div class="modal fade" id="modal-{{$project->slug}}" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitle-{{$project->slug}}" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalTitle-{{$project->slug}}">Delete {{$project->title}}</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <form action="{{route('admin.projects.destroy', $project->slug)}}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 @empty
