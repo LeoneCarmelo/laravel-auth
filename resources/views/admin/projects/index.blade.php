@@ -40,11 +40,15 @@
                     <td scope="row"><a href="{{$project->link_project}}">{{$project->link_project}}</a></td>
                     <td scope="row"><a href="{{$project->link_website}}">{{$project->link_website}}</a></td>
                     <td scope="row">
-                        <a href="{{route('admin.projects.show', $project->slug)}}"><span>View</span></a>
-                        <a href="{{route('admin.projects.edit', $project->slug)}}"><span>Edit</span></a>
+                        <a href="{{route('admin.projects.show', $project->slug)}}">
+                            <i class="fa fa-eye" aria-hidden="true" style="color: #000000;"></i>
+                        </a>
+                        <a href="{{route('admin.projects.edit', $project->slug)}}">
+                        <i class="fa-solid fa-pencil" style="color: #000000;"></i>
+                        </a>
                         <!-- Modal trigger button -->
-                        <button type="button" class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#modal-{{$project->slug}}">
-                            Delete
+                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal-{{$project->slug}}">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
                         </button>
                         <!-- Modal Body -->
                         <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
