@@ -23,6 +23,8 @@ class ProjectSeeder extends Seeder
             $newProject->slug = Str::slug($newProject->title, '-');
             $newProject->image = $faker->imageUrl(category: 'Projects', format: 'jpg');
             $newProject->description = $faker->paragraphs(asText: true);
+            $newProject->link_project = $faker->url(); 
+            $newProject->link_website = $faker->url(); 
             $newProject->save();
          }
     }

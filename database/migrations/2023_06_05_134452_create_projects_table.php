@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('slug');
             $table->text('image');
             $table->text('description');
+            $table->string('link_project');
+            $table->string('link_website');
             $table->timestamps();
         });
     }

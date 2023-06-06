@@ -1,1 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
+
+#description {
+    height: 100px;
+    overflow-y: auto;
+}
